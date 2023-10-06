@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Angkor&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+nav{
+
+
+    background:rgb(32, 31, 31);
+    padding: 10px 10px 10px 10px;
+}
+nav li{
+    list-style-type: none;
+}
+nav a:hover{
+    color: rgb(0, 0, 0);
+}
+nav a{
+    text-decoration:none ;
+    color: white;
+    font-family: 'Pangolin', cursive;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  gap: 60px;
+    text-align:center;
+    font-size: 25px;
+    margin: 0px 10px 5px 5px;
+}
+.logo{
+    display: flex;
+    font-family: 'Pangolin', cursive;
+    font-size: 25px;
+
+    color: white;
+    align-items: center;
+    margin: 10px;
+}
+.logo img{
+
+    height: 45px;
+    filter: invert(1);
+}
+#sponsers{
+
+    height: 30vh;
+    background:rgb(201, 134, 112);
+}
+.spns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+align-self: center;
+gap: 50px;
+
+    /* height: 200px; */
+    /* background: #000; */
+}
+.spns img{
+    height: 150px;
+}
+.spns img:hover{
+    filter: invert(1);
+    transition: 2s;
+    transform: scale(1.2) ;
+
+}
+footer{
+background: linear-gradient(
+    to right, #d38f8f, #be9f8a,
+         #637660, #4b3b3b
+);
+
+    /* background-color: #000; */
+
+}
+footer p:hover{
+    color:white;
+}
+#intro{
+    color: white;
+
+    display:flex;
+/* justify-content: center; */
+font-family:'Times New Roman', Times, serif;
+align-items: center;
+
+    height: 40vh;
+    background: url(https://w0.peakpx.com/wallpaper/514/225/HD-wallpaper-ballerina-fantasy-dress-girl-dance-dream-woman-blue.jpg) no-repeat ;
+    background-size:100%;
+    background-position-y: top;
+
+}
+#intro h1{
+    font-size:60px ;
+    background: linear-gradient(
+        to right, #ffffff, #be9f8a,
+         #498e3e, #f9f9f9
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+}
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+#mission{
+    text-align: center;
+   color: #fefefe;
+   font-size: 45px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 33vh;
+    background: rgb(125, 118, 118);
+}
+.daddy{
+    overflow: hidden;
+
+    display:flex;
+    gap:10px;
+    align-self: center;
+    align-content: center;
+    flex-direction: row;
+    justify-items: center;
+}
+.card{
+    height: 200px;
+    width: 450px;
+    border-radius: 30px;
+    margin: 10px 10px 10px 10px;
+}
+.card img:hover{
+    box-shadow: rgba(0, 0, 0, 0.6)
+    0px 7px 29px 0px;
+   transition: 4s;
+    transform: scale(1.1) ;
+}
+.daddy img{
+    height: 200px;
+    border-radius: 30px;
+    object-fit: cover;
+    width: 450px;
+}
+#sponsers{
+
+}
+#sponsers,h1{
+text-align: center;
+font-size: 40px;
+color: white;
+text-transform: uppercase;
+padding: 10px;
+}
+/* Add media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    /* Adjust the styling for mobile devices here */
+    nav ul {
+      flex-direction: column;
+    }
+    nav li {
+      margin: 10px 0;
+    }
+    .logo {
+      font-size: 20px;
+    }
+    .logo img {
+      height: 30px;
+    }
+    #intro h1 {
+      font-size: 40px;
+    }
+    .card {
+      width: 100%;
+    }
+    .daddy {
+      flex-direction: column;
+    }
+    .spns {
+      flex-direction: column;
+      gap: 30px;
+    }
+    #sponsers h3 {
+      font-size: 30px;
+    }
+  }

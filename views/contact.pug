@@ -1,0 +1,31 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title
+    | contact form
+  link(rel='stylesheet' href='/style.css')
+  style
+     include ../static/style2.css
+
+section#contact
+  h2 Contact Us
+  form#contactForm(action='/contact' method='post')
+    .form-group
+      label(for='name') Name
+      input#name(type='text' name='name' placeholder='Enter your Name' required='')
+    .form-group
+      label(for='email') Email
+      input#email(type='email' name='email' placeholder='Enter your Email' required='')
+    .form-group
+      label(for='phoneNumber') Phone Number
+      input#phoneNumber(type='tel' name='phoneNumber' placeholder='Enter your phone number' required='')
+    .form-group
+      label(for='address') Address
+      input#address(type='text' name='address' placeholder='Enter your address' required='')
+    .form-group
+      label(for='comments') Comments
+      textarea#comments(name='comments' placeholder='Comments')
+    button.btn(type='submit') Submit
+    button.btn(type='reset') Reset

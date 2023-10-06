@@ -1,0 +1,63 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Dance Academy Fees Inquiry Form
+  link(rel='stylesheet' href='/static/style.css')
+style
+     include ../static/style.css
+nav
+  ul
+    .logo
+      img(src='/views/671250_people_512x512.png' alt='')
+      span HK DANCE ACADEMY
+    li
+      a(href='/index.pug')  Home
+    li
+      a(href='/index.pug')  about
+    li
+      a(href='/fees.pug')  Fees
+    li
+      a(href='/solar.pug')  dancetypes
+    li
+      a(href='/contact.pug')  contact us
+.container
+  h2 Dance Academy Fees Inquiry Form
+  form#feesForm
+    label(for='danceStyle') Select Dance Style:
+    select#danceStyle(name='danceStyle')
+      option(value='ballet') Ballet
+      option(value='adults') Tap dance
+      option(value='adults') Jazz dance
+      option(value='adults') Bharatanatyam
+      option(value='hipHop') Hip Hop
+      option(value='contemporary') Contemporary
+      // Add more dance styles as needed
+    label(for='ageGroup') Select Age Group:
+    select#ageGroup(name='ageGroup')
+      option(value='kids') Kids (5-10 years)
+      option(value='teens') Teens (11-17 years)
+      option(value='adults') Adults (18+ years)
+      // Add more age groups as needed
+    label(for='experience') Dance Experience (in years):
+    input#experience(type='text' name='experience' placeholder='Enter your dance experience')
+    button(type='button' class="btn" onclick='calculateFees()') Calculate Fees
+  #result
+script.
+  function calculateFees() {
+  const danceStyle = document.getElementById('danceStyle').value;
+  const ageGroup = document.getElementById('ageGroup').value;
+  const experience = parseFloat(document.getElementById('experience').value);
+  // Sample fees calculation logic (You can customize this as needed)
+  let baseFees = 1500; // Base fees for a dance class
+  let experienceFactor = 1; // Factor to adjust fees based on experience
+  if (experience >= 2 && experience < 5) {
+  experienceFactor = 1.2; // Increase fees by 20% for 2 to 5 years of experience
+  } else if (experience >= 5) {
+  experienceFactor = 1.5; // Increase fees by 50% for more than 5 years of experience
+  }
+  let totalFees = baseFees * experienceFactor;
+  // Display the result
+  const resultElement = document.getElementById('result');
+  resultElement.innerHTML = `Total Fees for ${danceStyle} (${ageGroup}): ₹${totalFees.toFixed(2)}`;
+  }
